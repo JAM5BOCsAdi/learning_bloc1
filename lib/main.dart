@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(
@@ -10,6 +12,11 @@ void main() {
       home: const MyApp(),
     ),
   );
+}
+
+@immutable
+abstract class LoadAction {
+  const LoadAction();
 }
 
 class MyApp extends StatelessWidget {
