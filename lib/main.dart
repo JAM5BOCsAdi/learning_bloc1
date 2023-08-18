@@ -51,9 +51,9 @@ extension UrlString on PersonUrl {
         // and should tick in this in Live Server's settings
         // Live Server > Settings: Use Local Ip
         // Use Local Ip as Host
-        return something1;
+        return address1;
       case PersonUrl.persons2:
-        return something2;
+        return address2;
     }
   }
 }

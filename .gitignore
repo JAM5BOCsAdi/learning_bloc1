@@ -43,5 +43,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Ignore the folder containing something
+# Things to ignore
 lib/ignore.dart
