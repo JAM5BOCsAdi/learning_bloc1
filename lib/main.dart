@@ -1,10 +1,11 @@
 import 'dart:convert';
+import 'dart:developer' as devtools show log;
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'dart:developer' as devtools show log;
+import 'something/something.dart';
 
 extension Log on Object {
   void log() => devtools.log(toString());
@@ -50,9 +51,9 @@ extension UrlString on PersonUrl {
         // and should tick in this in Live Server's settings
         // Live Server > Settings: Use Local Ip
         // Use Local Ip as Host
-        return 'http://My_IP_Address:5500/api/persons1.json';
+        return something1;
       case PersonUrl.persons2:
-        return 'http://My_IP_Address:5500/api/persons2.json';
+        return something2;
     }
   }
 }
