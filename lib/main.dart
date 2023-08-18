@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../something/something.dart';
+import 'something/something.dart';
 
 extension Log on Object {
   void log() => devtools.log(toString());

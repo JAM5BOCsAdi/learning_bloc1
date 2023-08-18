@@ -44,5 +44,5 @@ app.*.map.json
 /android/app/release
 
 # Ignore the folder containing something
-lib/something/something.dart
+/something/
 
