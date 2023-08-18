@@ -4,6 +4,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'dart:developer' as devtools show log;
+
+extension Log on Object {
+  void log() => devtools.log(toString());
+}
+
 void main() {
   runApp(
     MaterialApp(
@@ -40,9 +46,13 @@ extension UrlString on PersonUrl {
   String get urlString {
     switch (this) {
       case PersonUrl.persons1:
-        return 'http://127.0.0.1:5500/api/persons1.json';
+        //TODO: Only works with my IP address (Only on Emulator)
+        // and should tick in this in Live Server's settings
+        // Live Server > Settings: Use Local Ip
+        // Use Local Ip as Host
+        return 'http://My_IP_Address:5500/api/persons1.json';
       case PersonUrl.persons2:
-        return 'http://127.0.0.1:5500/api/persons2.json';
+        return 'http://My_IP_Address:5500/api/persons2.json';
     }
   }
 }
@@ -153,6 +163,7 @@ class MyApp extends StatelessWidget {
               return previousResult?.persons != currentResult?.persons;
             },
             builder: (context, fetchResult) {
+              fetchResult?.log();
               final persons = fetchResult?.persons;
               if (persons == null) {
                 return const SizedBox();
