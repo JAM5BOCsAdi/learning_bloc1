@@ -71,6 +71,9 @@ class Person {
   Person.fromJson(Map<String, dynamic> json)
       : name = json['name'] as String,
         age = json['age'] as int;
+
+  @override
+  String toString() => 'Person (name: $name, age = $age)';
 }
 
 Future<Iterable<Person>> getPersons(String url) => HttpClient()
