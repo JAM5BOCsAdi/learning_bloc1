@@ -36,6 +36,10 @@ class FetchResult {
 class PersonsBloc extends Bloc<LoadAction, FetchResult?> {
   final Map<String, Iterable<Person>> _cache = {};
 
+  //TODO: TEST 1
+
+  // This line is what we are testing in persons_bloc_test.dart:
+  // The [PersonsBloc] should be [null] at the beginning.
   PersonsBloc() : super(null) {
     on<LoadPersonsAction>(
       (event, emit) async {

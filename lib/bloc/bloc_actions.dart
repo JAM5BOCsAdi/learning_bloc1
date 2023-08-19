@@ -11,7 +11,9 @@ import 'package:learning_bloc1/bloc/person.dart';
 //   String get urlString {
 //     switch (this) {
 //       case PersonUrl.persons1:
+
 //TODO: Only works with my IP address (Only on Emulator)
+
 // and should tick in this in Live Server's settings
 // Live Server > Settings: Use Local Ip
 // Use Local Ip as Host
