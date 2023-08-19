@@ -83,10 +83,6 @@ Future<Iterable<Person>> getPersons(String url) => HttpClient()
     .then((str) => json.decode(str) as List<dynamic>)
     .then((list) => list.map((e) => Person.fromJson(e)));
 
-// Cache-ing: If we fetched the person's url, we are not going to fetch it the next time again.
-// If we already have the results like fetched and parse,
-// then we are going to store them in some sort of cache and once you ask for that same data again,
-// than we are going to fetch that result from the catch.
 @immutable
 class FetchResult {
   // This is the OutPut
@@ -109,6 +105,10 @@ class PersonsBloc extends Bloc<LoadAction, FetchResult?> {
   PersonsBloc() : super(null) {
     on<LoadPersonsAction>(
       (event, emit) async {
+        // Cache-ing: If we fetched the person's url, we are not going to fetch it the next time again.
+        // If we already have the results like fetched and parse,
+        // then we are going to store them in some sort of cache and once you ask for that same data again,
+        // than we are going to fetch that result from the catch.
         final url = event.url;
         if (_cache.containsKey(url)) {
           final cachedPersons = _cache[url]!;
